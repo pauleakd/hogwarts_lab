@@ -23,4 +23,10 @@ class Student
     result = Student.new(student.first)
     return result
   end
+
+  def self.find_all
+    sql = "SELECT * FROM students"
+    students = SqlRunner.run(sql)
+    return students.map{|student| Student.new(student)}
+  end
 end
