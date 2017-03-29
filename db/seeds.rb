@@ -30,7 +30,7 @@ student1 = Student.new({
 
 
   gryffindor = House.new({
-    "Name" => "Gryffindor",
+    "house_name" => "Gryffindor",
     "logo_url" => "http://img09.deviantart.net/56b5/i/2011/255/6/8/gryffindor_crest_by_tuliipiie-d491bqc.jpg"
     })
 
@@ -55,5 +55,5 @@ student1 = Student.new({
     ravenclaw.save
 
 
-  # binding.pry
-  # nil
+  binding.pry
+  nil

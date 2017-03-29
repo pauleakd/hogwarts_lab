@@ -17,6 +17,18 @@ attr_accessor :house_name, :logo_url
     @id = house_data.first()['id'].to_i
   end
 
+  def self.find_all()
+    sql = "SELECT * FROM houses"
+    houses = SqlRunner.run(sql)
+    return houses.map{|house| House.new(house)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM houses WHERE id = #{id}"
+    house = SqlRunner.run(sql)
+    return House.new(house.first)
+  end
+
 
 
 
