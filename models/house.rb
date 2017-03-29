@@ -2,7 +2,7 @@
 require_relative('../db/sql_runner')
 
 class House
-attr_accessor :house_name, :logo_url
+attr_accessor :house_name, :logo_url, :id
 
   def initialize(options)
     @house_name = options["house_name"]
@@ -27,6 +27,11 @@ attr_accessor :house_name, :logo_url
     sql = "SELECT * FROM houses WHERE id = #{id}"
     house = SqlRunner.run(sql)
     return House.new(house.first)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM houses"
+    SqlRunner.run(sql)
   end
 
 

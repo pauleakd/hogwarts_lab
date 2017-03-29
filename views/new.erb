@@ -18,11 +18,19 @@
   <br/>
   <br/>
 
-  <label for="student-select"> Select a student</label>
+  <label for="student-select"> Select a house</label>
+  <select id="student-select" name = "house_id">
+    <% @houses.each do |house| %>
+    <option value= <%=house.id  %>> <%= house.house_name %> </option>
+    <% end  %>
+  </select>
+
+
+  <!-- <label for="student-select"> Select a student</label>
   <select id="student-select" name = "house">
     <option value="Gryffindor">Gryffindor</option>
     <option value="Slytherin">Slytherin</option>
-  </select>
+  </select> -->
 
   <br/>
   <br/>
